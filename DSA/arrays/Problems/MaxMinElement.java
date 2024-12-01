@@ -7,7 +7,7 @@
 // Maximum: 9
 // Minimum: 1
 
-package arrays.Problems;
+package arrays.problems;
 
 public class MaxMinElement {
     public static void main(String[] args) {
@@ -34,3 +34,4 @@ public class MaxMinElement {
         return min;
     }
 }
+

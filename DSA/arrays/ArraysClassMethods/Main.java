@@ -1,4 +1,4 @@
-package arrays.ArraysClassMethods;
+package arrays.arraysClassMethods;
 
 import java.util.Arrays;
 
