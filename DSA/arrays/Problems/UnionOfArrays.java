@@ -11,14 +11,20 @@ public class UnionOfArrays {
         System.out.println(findUnion(a, b));
     }
     public static ArrayList<Integer> findUnion(int a[], int b[]) {
-        List<Integer> list = new ArrayList<Integer>();
-        TreeSet<Integer> set = new TreeSet<Integer>();
-        for(int i = 0; i < a.length; i++){
-            set.add(a[i]);
+        ArrayList<Integer> unionList = new ArrayList<>();
+        int i = 0;
+        int j = 0;
+        int alen = a.length;
+        int blen = b.length;
+        while (i < alen && j < blen) {
+            if(a[i] != b[j]){
+                if(a[i] < b[j]){
+                    unionList.add(a[i]);
+                }
+                else{
+                    unionList.add(b[i]);
+                }
+            }
         }
-        for(int i = 0; i < b.length; i++){
-            set.add(b[i]);
-        }
-        return list.addAll(set);
     }
 }
