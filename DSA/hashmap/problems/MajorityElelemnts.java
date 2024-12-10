@@ -4,11 +4,11 @@ import java.util.*;
 
 public class MajorityElelemnts{
     public static void main(String[] args) {
-        int[] arr = {1, 3, 2, 5, 1, 3, 1, 5, 1};
-        int[] arr2 = {2, 2, 2, 2, 1, 1, 1, 1};
+        int[] arr = {2,2,1,1,1,2,2};
+        int[] arr2 = {2, 2, 2, 2, 1, 1, 1, 1, 2, 2};
         int[] arr3 = {1, 2};
-        // System.out.println(majorityElelemnts(arr2));
-        System.out.println(MajorityElelemntsUsingHashMap(arr2));
+        System.out.println(majorityElelemnts(arr));
+        System.out.println(MajorityElelemntsUsingHashMap(arr));
     }
 
     //Brute Force approach
@@ -37,10 +37,11 @@ public class MajorityElelemnts{
         List<Integer> list = new ArrayList<>();
         HashMap<Integer, Integer> map = new HashMap<>();
         for(int i = 0; i < n; i++){
-            if(!map.containsKey(nums[i]))
-                map.put(nums[i], 1);
-            else if(map.containsKey(nums[i]))
+            if(map.containsKey(nums[i])){
                 map.put(nums[i], map.get(nums[i]) + 1);
+            }else{
+                map.put(nums[i], 1);
+            }
         }
         for(Map.Entry<Integer, Integer> entry : map.entrySet()){
             if(entry.getValue() > majority)
