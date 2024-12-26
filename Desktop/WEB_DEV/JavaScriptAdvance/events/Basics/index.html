@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <!-- ----------Inline events------------- -->
+     <article class="container">
+        <div class="inlineContainer">
+            <header>Inline Events</header>
+            <button onclick="alert(`Single clicked`)">Click for Greeting</button>
+            <button ondblclick="alert(`Double clicked`)">Double Click for Greeting</button>
+            <button onmouseover="alert(`Mouse Hovered`)">Hover Mouse for Greeting</button>
+         </div>
+    
+         <!-- ----------Dom Events events------------- -->
+         <div class="domEvents">
+            <header>DOM Events</header>
+            <button id="single">Click for Greeting</button>
+            <button id="double">Double Click for Greeting</button>
+            <button id="triple">Hover Mouse for Greeting</button>
+         </div>
+    
+         <!-- ----------Add Event Listners events------------- -->
+         <div class="addEventListnerEvents">
+            <header>Add Event Listner Events</header>
+            <button id="first">Click for Greeting</button>
+            <button id="second">Double Click for Greeting</button>
+            <button id="third">Hover Mouse for Greeting</button>
+         </div>
+     </article>
+     <script>
+        document.getElementById("single").onclick = ((e)=>{
+            alert(`Single click dom event`);
+        })
+
+        document.getElementById("double").ondblclick = ((e)=>{
+            alert(`double click dom event`);
+        })
+
+        document.getElementById("triple").onmouseover = ((e)=>{
+            alert(`mouse over click dom event`);
+        })
+     </script>
+</body>
+</html>
