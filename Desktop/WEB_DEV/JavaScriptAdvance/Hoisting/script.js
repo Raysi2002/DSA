@@ -28,7 +28,7 @@
 // -------Incase of anynomous function or lamda expression ---------
 
 
-console.log(fun); // Will show undefined
+console.log("Fun: ", fun); // Will show undefined
 fun(); //Will throw console.error();
 
 
