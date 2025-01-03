@@ -1,10 +1,12 @@
 // // Block: Anything inside curly brackets are call Block
 // {
 //     let nam = "Aashish";
-//     console.log(nam)
+//     var something = "something";
+//     const somethingConst = "somethingConst"
 // }
-// let nam = "Kanxu";
+// console.log(something);
 // console.log(nam);
+// console.log(somethingConst);
 
 // //Shadowing
 // let x = 116;
