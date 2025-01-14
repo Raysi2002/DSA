@@ -48,18 +48,37 @@
 //         console.log(user);
 //     })
 
-const promiseFour = new Promise((resolve, reject) => {
+// const promiseFour = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         reject("Promise is rejected");
+//     }, 1000)
+// })
+
+// promiseFour
+//     .then(() => {
+//         console.log("Promise is accepted");
+//     })
+//     .catch((error) => {
+//         console.error(error);
+//     })
+
+
+const promiseFive = new Promise((resolve, rejevt) => {
+    const user = {
+        username : "raysi2002",
+        email : "2002raysi@gmail.com"
+    }
     setTimeout(() => {
-        reject("Promise is rejected");
-    }, 1000)
+        resolve(user);
+    }, 500);
 })
 
-promiseFour
-    .then(() => {
-        console.log("Promise is accepted");
+promiseFive
+    .then((user) => {
+        console.log(user);
+        return user.username;
     })
-    .catch((error) => {
-        console.error(error);
+    .then((username) => {
+        console.log(username);
     })
-
-    
+    .catch((error) => console.error(error));
