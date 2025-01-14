@@ -18,3 +18,17 @@ promiseOne
     })
     .catch((error) => console.error(error));
     
+
+
+new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log("Async task is done");
+        resolve();
+    }, 500)
+})
+    .then(() => {
+        console.log("Promise is exectued");
+    })
+    .catch((error) => {
+        console.error(error);
+    })
