@@ -33,17 +33,31 @@
 //         console.error(error);
 //     })
 
-const promiseThree = new Promise((resolve, reject) => {
-    const user = {
-        username : "Preeti",
-        email : "2004preeti@gmail.com"
-    }
+// const promiseThree = new Promise((resolve, reject) => {
+//     const user = {
+//         username : "Preeti",
+//         email : "2004preeti@gmail.com"
+//     }
+//     setTimeout(() => {
+//         resolve(user);
+//     }, 1000);
+// })
+
+// promiseThree
+//     .then((user) => {
+//         console.log(user);
+//     })
+
+const promiseFour = new Promise((resolve, reject) => {
     setTimeout(() => {
-        resolve(user);
-    }, 1000);
+        reject("Promise is rejected");
+    }, 1000)
 })
 
-promiseThree
-    .then((user) => {
-        console.log(user);
+promiseFour
+    .then(() => {
+        console.log("Promise is accepted");
+    })
+    .catch((error) => {
+        console.error(error);
     })
