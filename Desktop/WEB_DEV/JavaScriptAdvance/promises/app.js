@@ -63,22 +63,48 @@
 //     })
 
 
-const promiseFive = new Promise((resolve, rejevt) => {
+// const promiseFive = new Promise((resolve, rejevt) => {
+//     const user = {
+//         username : "raysi2002",
+//         email : "2002raysi@gmail.com"
+//     }
+//     setTimeout(() => {
+//         resolve(user);
+//     }, 500);
+// })
+
+// promiseFive
+//     .then((user) => {
+//         console.log(user);
+//         return user.username;
+//     })
+//     .then((username) => {
+//         console.log(username);
+//     })
+//     .catch((error) => console.error(error));
+
+
+const promiseSix = new Promise((resolve, reject) => {
+
     const user = {
-        username : "raysi2002",
-        email : "2002raysi@gmail.com"
+        username : "sonu2004",
+        email : "sonu2004@gmail.com"
     }
+    const error = true;
+
     setTimeout(() => {
-        resolve(user);
-    }, 500);
+        return !error ? resolve(user) : reject("Something went wrong"); 
+    }, 100)
 })
 
-promiseFive
+promiseSix
     .then((user) => {
         console.log(user);
-        return user.username;
+        return user.email;
     })
-    .then((username) => {
-        console.log(username);
+    .then((userEmail) => {
+        console.log(userEmail);
     })
-    .catch((error) => console.error(error));
+    .catch((error) => {
+        console.error(error);
+    })
