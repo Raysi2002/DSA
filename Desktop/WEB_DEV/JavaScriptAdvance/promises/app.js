@@ -137,14 +137,27 @@
 //     .finally(() => console.log("Program is finished"));
 
 // -------pre-fetch------------
-async function userData(){
-    try{
-        const response = await fetch("https://jsonplaceholder.typicode.com/users");
-        const data = await response.json();
-        console.log(data)
-    }catch(error){
-        console.error(error);
-    }
-}
+// async function userData(){
+//     try{
+//         const response = await fetch("https://jsonplaceholder.typicode.com/users");
+//         const data = await response.json();
+//         console.log(data)
+//     }catch(error){
+//         console.error(error);
+//     }
+// }
 
-userData();
+// userData();
+
+fetch("https://jsonplaceholder.typicode.com/users")
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        console.log(data);
+    })
+    .catch((err) => {
+        console.error(err);
+    })
+    .finally(() => console.log("Thanks for using this code !"));
+
