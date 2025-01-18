@@ -66,6 +66,48 @@ public class DoublyLinkedList {
         }
         current.next = null;
     }
+
+    public void insertAtPosition(int data, int pos) {
+        if (pos <= 0) {
+            System.out.println("Invalid position, Position must be positive");
+            return;
+        }
+    
+        Node newNode = new Node(data);
+    
+        // Case 1: Insert at the head
+        if (pos == 1) {
+            newNode.next = head;
+            if (head != null) {
+                head.prev = newNode;
+            }
+            head = newNode;
+            return;
+        }
+    
+        // Traverse to the (pos - 1)th node
+        int count = 1;
+        Node current = head;
+    
+        while (current != null && count < pos - 1) {
+            current = current.next;
+            count++;
+        }
+    
+        // If the position is out of bounds
+        if (current == null) {
+            System.out.println("Index out of bound");
+            return;
+        }
+    
+        // Case 2: Insert in the middle or at the tail
+        newNode.next = current.next;
+        if (current.next != null) {
+            current.next.prev = newNode;
+        }
+        newNode.prev = current;
+        current.next = newNode;
+    }
     public void display(){
         if(head.next == null){
             System.out.println("DLL is empty!");

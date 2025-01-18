@@ -15,5 +15,9 @@ public class DLLMain {
         dll.display();
         dll.deleteEnd();
         dll.display();
+        dll.addFirst(98);
+        dll.addFirst(23);
+        dll.insertAtPosition(567, 3);
+        dll.display();
     }
 }

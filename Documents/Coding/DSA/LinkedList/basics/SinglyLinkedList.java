@@ -47,9 +47,9 @@ class SinglyLinkedList{
             return;
         }
         while(current.next.next != null){
-            current.next = current.next.next;
+            current = current.next;
         }
-        current.next.next = null;
+        current.next = null;
         
     }
 
