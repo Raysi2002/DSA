@@ -13,6 +13,14 @@ public class SLLMain {
         System.out.println("\nDeleted Element: " + sll.deleteLast());
         sll.display();
         System.out.println("\nElement Index: " + sll.search(200));
+        sll.insetAtPos(1, 116);
+        sll.display();
+        sll.insetAtPos(2, 23);
+        System.out.println();
+        sll.display();
+        sll.reverse();
+        System.out.println("\nReversed Linked List");
+        sll.display();
     }
 
 }

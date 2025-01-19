@@ -80,6 +80,45 @@ public class SinglyLinkedList {
         }
     }
 
+    public void insetAtPos(int pos, int data){
+        if(pos > 1){
+            System.out.println("No such index present in the linkedlsit");
+            return;
+        }
+        Node newNode = new Node(data);
+        if(pos == 1){
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+        Node current = head;
+        int count = 1;
+        while (count < pos - 1 && current != null) {
+            count++;
+            current = current.next;
+        }
+        if(current == null){
+            System.out.println("Index out of bound");
+            return;
+        }else{
+            newNode.next = current.next;
+            current.next = newNode;
+        }
+    }
+
+    public void reverse(){
+        Node prev = null;
+        Node current = head;
+        Node next = null;
+        while(current != null){
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+    }
+
     public void display(){
         if(head == null)
             System.out.println("No data present");
