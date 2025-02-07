@@ -11,7 +11,8 @@ public class Order {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter range: ");
         int n = sc.nextInt();
-        Nto1(n);
+        // Nto1(n);
+        OneToN(1, n);
     }
 
     static void Nto1(int n){
@@ -19,5 +20,12 @@ public class Order {
             return;
         System.out.println(n);
         Nto1(n - 1);
+    }
+
+    static void OneToN(int from, int n){
+        if(from > n)
+            return;
+        System.out.println(from);
+        OneToN(from + 1, n);
     }
 }
