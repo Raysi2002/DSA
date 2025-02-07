@@ -22,5 +22,4 @@ public class SLLMain {
         System.out.println("\nReversed Linked List");
         sll.display();
     }
-
 }

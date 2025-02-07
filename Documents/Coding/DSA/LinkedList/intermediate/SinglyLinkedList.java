@@ -119,6 +119,7 @@ public class SinglyLinkedList {
         head = prev;
     }
 
+
     public void display(){
         if(head == null)
             System.out.println("No data present");
